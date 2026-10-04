@@ -67,7 +67,7 @@ public class GhostSpearClient implements ClientModInitializer {
         Entity target = findTarget(mc, p);
         if (target == null) return;
 
-        Vec3d aim = target.getPos().add(0, target.getHeight() / 2, 0);
+        Vec3d aim = new Vec3d(target.getX(), target.getY() + target.getHeight() / 2, target.getZ());
         Vec3d toTarget = aim.subtract(p.getEyePos());
 
         if (toTarget.length() <= REACH) {
